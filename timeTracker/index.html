@@ -4,11 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Vite App</title>
+    <link rel="stylesheet" href="./public/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Vite App - Time Tracking Dashboard</title>
   </head>
   <body>
-    
+    <main>
+      <div class="mainReport">
+        <div class="mainReport__for">
+          <img src="./public/assets/images/image-jeremy.png" alt="You">
+          <div>
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+        </div>
+        <div class="mainReport__choice">
+          <ul>
+            <li id="daily" class="active">Daily</li>
+            <li id="weekly">Weekly</li>
+            <li id="monthly">Monthly</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reportSection">
+        <!-- Contenu généré en JS -->
+      </div>
+    </main>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,254 @@
+//Colors
+
+//Primary
+
+$Blue: hsl(246, 80%, 60%);
+
+$Lightorange: hsl(15, 100%, 70%); //work
+$Softblue: hsl(195, 74%, 62%); //play
+$Lightred: hsl(348, 100%, 68%); //study
+$Limegreen: hsl(145, 58%, 55%); //exercice
+$Violet: hsl(264, 64%, 52%); //social
+$Softorange: hsl(43, 84%, 65%); //selfcare
+
+//Neutral
+
+$Verydarkblue: hsl(226, 43%, 10%);
+$Darkblue: hsl(235, 46%, 20%);
+$Desaturatedblue: hsl(235, 45%, 61%);
+$PaleBlue: hsl(236, 100%, 87%);
+
+//Font
+
+$rubik:"Rubik", sans-serif;
+
+//mixin
+
+@mixin responsive($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $Verydarkblue;
+    font-family: $rubik;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    @include responsive(768px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include responsive(768px){
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            height: 60vh;
+        }
+        .mainReport{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            background-color: $Darkblue;
+            width: 90%;
+            
+            border-radius: 20px;
+            @include responsive(768px){
+                margin-right: 20px;
+                width: 60%;
+                height: 500px;
+                margin-top: 50px;
+            }
+            .mainReport__for{
+                background-color: $Blue;
+                display: flex;
+                width: 100%;
+                border-radius: 20px;
+                padding: 30px;
+                @include responsive(768px){
+                    flex-direction: column;
+                    height: 70%;
+                }
+                img{
+                    width: 70px;
+                    border: 2px solid #fff;
+                    border-radius: 50px;
+                    margin-right: 20px;
+                    @include responsive(768px){
+                        width: 90px;
+                        margin-bottom: 30px;
+                    }
+                }
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    p{
+                        color: $PaleBlue;
+                    }
+                    h1{
+                        font-size: 24px;
+                        font-weight: 300;
+                        @include responsive(768px){
+                            font-size: 48px;
+                        }
+                    }
+                }
+            }
+            .mainReport__choice{
+                width: 100%;
+                ul{
+                    list-style-type: none;
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 30px 0;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: $Desaturatedblue;
+                    @include responsive(768px){
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-left: 30px;
+                    }
+                    li{
+                        @include responsive(768px){
+                            margin: 10px 0;
+                        }
+                    }
+                    li:hover{
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                }
+                .active{
+                    color: #fff;
+                    font-weight: 400;
+                }
+            }
+        }
+        .reportSection{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            margin-top: 50px;
+            @include responsive(768px){
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+                height: 500px;
+            }
+            .reportSection__el{
+                width: 100%;
+                height: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                border-radius: 20px;
+                overflow: hidden;
+                margin :15px 0;
+                position: relative;
+                @include responsive(768px){
+                    width: 45%;
+                    margin: 20px 10px;
+                    margin-top: 0;
+                }
+                .icon-task{
+                    margin-top: -10px;
+                    margin-right: 20px;
+                    width: 75px;
+                    height: auto;
+                }
+                .reportSection__Timer{
+                    width: 100%;
+                    background-color: $Darkblue;
+                    border-radius: 20px;
+                    margin-top: -5px;
+                    padding:20px;
+                    position: absolute;
+                    bottom: 0;
+                    &:hover{
+                        background-color: $Desaturatedblue;
+                    }
+                    .reportSection__Timer--title{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin-bottom: 10px;
+                        h2{
+                            font-size: 18px;
+                            font-weight: 300;
+                        }
+                        p{
+                            font-size: 24px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+            .reportSection__Work{
+                background-color: $Lightorange;
+            }
+            .reportSection__Play{
+                background-color: $Softblue;
+            }
+            .reportSection__Study{
+                background-color: $Lightred;
+            }
+            .reportSection__Exercise{
+                background-color: $Limegreen;
+                .icon-task{
+                    width: 80px;
+                    margin-top: 0px;
+                }
+            }
+            .reportSection__Social{
+                background-color: $Violet;
+                .icon-task{
+                    width: 80px;
+                    margin-top: -15px;
+                }
+            }
+            .reportSection__SelfCare{
+                background-color: $Softorange;
+            }
+            .reportSection__Timer--timer{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .current{
+                    font-size: 30px;
+                    font-weight: 300;
+                    @include responsive(768px){
+                        font-size: 26px;
+                    }
+                }
+                .previous{
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: $PaleBlue;
+                    @include responsive(768px){
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
